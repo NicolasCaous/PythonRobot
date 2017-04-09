@@ -40,7 +40,7 @@ class PiVideoStream:
 		f_bw = cv2.cvtColor(f_bgr, cv2.COLOR_BGR2GRAY)
 		ret, mask = cv2.threshold(f_bw, 50, 255, cv2.THRESH_BINARY_INV)
 		curva = 0
-       		for i in pidvalues:
+		for i in pidvalues:
                 	tmp = centroLinha(mask[i, linha[0]:linha[1]:linha[2]], clmin, clmax, target, linha[0], linha[2])
 			cv2.circle(f_bgr, (tmp, i), 10, (0,255,0), 2)
                 	if(tmp != 0):
@@ -53,7 +53,7 @@ class PiVideoStream:
                 f_bw = cv2.cvtColor(f_bgr, cv2.COLOR_BGR2GRAY)
                 ret, mask = cv2.threshold(f_bw, 50, 255, cv2.THRESH_BINARY_INV)
                 curva = 0
-                for i in pidvalues:
+		for i in pidvalues:
                         tmp = centroLinha(mask[i, linha[0]:linha[1]:linha[2]], clmin, clmax, target, linha[0], linha[2])
                         if(tmp != 0):
                                 curva = curva + tmp - 104
